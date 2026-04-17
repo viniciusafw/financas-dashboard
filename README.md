@@ -1,16 +1,33 @@
-# React + Vite
+# 💰 fin.track
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Um dashboard minimalista e moderno para controle financeiro pessoal, focado em usabilidade e design.
 
-Currently, two official plugins are available:
+O **fin.track** permite que você acompanhe suas receitas e despesas de forma visual, com gráficos dinâmicos e um resumo claro do seu saldo atual. Todos os dados são salvos localmente no seu navegador.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Funcionalidades
 
-## React Compiler
+* 📊 **Dashboard Visual:** Gráficos de linha para evolução mensal e gráfico de rosca para despesas por categoria.
+* 🌗 **Dark/Light Mode:** Suporte nativo para tema claro e escuro.
+* 💾 **Persistência de Dados:** Uso do `localStorage` para não perder os dados ao fechar a aba.
+* 🔍 **Filtros:** Separação de transações por mês, tipo (receita/despesa) ou categoria.
+* 📱 **Responsivo:** Layout que se adapta perfeitamente do celular ao desktop.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+* **[React](https://react.dev/):** Biblioteca principal para construção da interface (JS/JSX).
+* **[Tailwind CSS](https://tailwindcss.com/):** Estilização rápida, moderna e responsiva.
+* **[Chart.js](https://www.chartjs.org/):** Para renderização dos gráficos dinâmicos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Estrutura do Projeto
+
+O código foi organizado visando separar a lógica de negócio da interface de usuário:
+
+```text
+src/
+ ┣ components/
+ ┃ ┣ Charts.jsx          # Lógica e renderização dos gráficos
+ ┃ ┣ TransactionForm.jsx # Formulário de adição de novas transações
+ ┃ ┗ TransactionList.jsx # Lista de transações e barras de progresso
+ ┣ utils/
+ ┃ ┗ helpers.js          # Funções utilitárias (formatação de moeda, categorias, dados falsos)
+ ┗ App.jsx               # Componente principal que gerencia o estado (transações e tema)
